@@ -10,7 +10,7 @@ def quad(a, b, c):
         print(x2)
 
 while True:
-    a = int(input("a = "))
-    b = int(input("b = "))
-    c = int(input("c = "))
+    a = float(input("a = "))
+    b = float(input("b = "))
+    c = float(input("c = "))
     quad(a, b, c)

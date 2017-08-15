@@ -5,13 +5,11 @@ question_total = 0
 vari_faux = "Taper oui si c'est vrai, tapez non si c'est faux"
 
 def check(question, reponse):
-    bonne_reponse = 0
-    question_total = 0
     if question == reponse:
         print("Bonne réponse")
         print()
     else:
-        print("mauvaise réponse")
+        print("Mauvaise réponse")
         print()
 
 while True:
@@ -26,14 +24,14 @@ while True:
         check(question, reponse)
 
     elif regle == 2:
-        c=random.randrange(-11, 11)
+        c=random.randrange(1, 11)
 
         question=1
         reponse=int(input("log" + str(c) + " " + str(c) + " = "))
         check(question, reponse)
 
     elif regle == 3:
-        c=random.randrange(-11, 11)
+        c=random.randrange(1, 11)
         n=random.randrange(-11, 11)
 
         question=n
@@ -48,11 +46,11 @@ while True:
         n=random.randrange(-11, 11)
         if sous_regle == 1:
             question = "oui"
-            reponse = str(input("log" + str(c) + " (" + str(m) + "x" + str(n) + ") = log" + str(c) + " " + str(m) + " + log" + str(c) + " " + str(n)))
+            reponse = str(input("log" + str(c) + " (" + str(m) + "*" + str(n) + ") = log" + str(c) + " " + str(m) + " + log" + str(c) + " " + str(n) + " ?"))
             check(question, reponse)
         else:
             question = "non"
-            reponse = str(input("log" + str(c) + "(" + str(m) + "x" + str(n) + ") = log" + str(c) + " " + str(m) + " * log" + str(c) + " " + str(n)))
+            reponse = str(input("log" + str(c) + " (" + str(m) + "*" + str(n) + ") = log" + str(c) + " " + str(m) + " * log" + str(c) + " " + str(n) + " ?"))
             check(question, reponse)
 
     elif regle == 5:
@@ -63,11 +61,11 @@ while True:
         n=random.randrange(-11, 11)
         if sous_regle == 1:
             question = "oui"
-            reponse = str(input("log" + str(c) + " " + str(m) + "/" + str(n) + ") = log" + str(c) + " " + str(m) + " - log" + str(c) + " " + str(n)))
+            reponse = str(input("log" + str(c) + " " + str(m) + "/" + str(n) + ") = log" + str(c) + " " + str(m) + " - log" + str(c) + " " + str(n) + " ?"))
             check(question, reponse)
         else:
             question = "non"
-            reponse = str(input("log" + str(c) + "(" + str(m) + "/" + str(n) + ") = log" + str(c) + " " + str(m) + " / log" + str(c) + " " + str(n)))
+            reponse = str(input("log" + str(c) + "(" + str(m) + "/" + str(n) + ") = log" + str(c) + " " + str(m) + " / log" + str(c) + " " + str(n) + " ?"))
             check(question, reponse)
 
     elif regle == 6:
@@ -78,11 +76,11 @@ while True:
         prod=random.randrange(-11, 11)
         if sous_regle == 1:
             question = "oui"
-            reponse = str(input("log" + str(prod) + "/" + str(c) + " " + str(m) + " = " + str(prod) + "log" + str(c) + " " + str(m)))
+            reponse = str(input("log" + str(prod) + "/" + str(c) + " " + str(m) + " = " + str(prod*-1) + "log" + str(c) + " " + str(m) + " ?"))
             check(question, reponse)
         else:
             question = "non"
-            reponse = str(input("log" + str(prod) + "/" + str(c) + " " + str(m) + " = log" + str(c) + " " + str(prod) + " - log" + str(c) + " " + str(m)))
+            reponse = str(input("log" + str(prod) + "/" + str(c) + " " + str(m) + " = log" + str(c) + " " + str(prod) + " - log" + str(c) + " " + str(m) + " ?"))
             check(question, reponse)
 
     elif regle == 7:
@@ -93,11 +91,11 @@ while True:
         prod=random.randrange(-11, 11)
         if sous_regle == 1:
             question = "oui"
-            reponse = str(input("log" + str(prod) + "/" + str(c) + " " + str(m) + " = " + str(prod) + "log" + str(c) + " " + str(m)))
+            reponse = str(input("log" + str(prod*-1) + "/" + str(c) + " " + str(m) + " = " + str(prod) + "log" + str(c) + " " + str(m) + " "))
             check(question, reponse)
         else:
             question = "non"
-            reponse = str(input("log" + str(prod) + "/" + str(c) + " " + str(m) + " = log" + str(c) + " " + str(prod) + " - log" + str(c) + " " + str(m)))
+            reponse = str(input("log" + str(prod) + "/" + str(c) + " " + str(m) + " = log" + str(c) + " " + str(prod) + " - log" + str(c) + " " + str(m) + " "))
             check(question, reponse)
 
     elif regle == 8:
@@ -109,11 +107,11 @@ while True:
             m=random.randrange(-11, 11)
         if sous_regle == 1:
             question = "oui"
-            reponse = str(input("log" + str(c) + " " + str(m) + " = log " + str(m) + "/log " + str(c)))
+            reponse = str(input("log" + str(c) + " " + str(m) + " = log " + str(m) + "/log " + str(c) + " ?"))
             check(question, reponse)
         else:
             question = "non"
-            reponse = str(input("log" + str(c) + " " + str(m) + " = log " + str(c) + "/log " + str(m)))
+            reponse = str(input("log" + str(c) + " " + str(m) + " = log " + str(c) + "/log " + str(m) + " ?"))
             check(question, reponse)
     else:
         print("Il semble avoir un problème avec la variable règle...")
