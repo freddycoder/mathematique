@@ -19,8 +19,8 @@ class Main:
       print("|a/b                 : 6 |")
       print("|a^n                 : 7 |")      
       print("|Votre choix         : ", end="")
-      choice = -1
-      while choice < 0 or 7 < choice :
+      choice = -2
+      while choice < -1 or 7 < choice:
         try:
           choice = float(input())
           if choice == -1:
@@ -98,6 +98,10 @@ class Main:
         puissance = float(input("Entrer la puissance :"))
         print(Incertitude.a_power_n(valeur_approcher_a, incertitude_a, puissance))
     
+      elif choice == -1:
+        print("Merci d'avoir utilisé le calculateur d'erreur! ")
+        run = False
+
       else:
         print("Something dosen't work well... ")
 
@@ -139,8 +143,6 @@ class Incertitude:
     a_power_n_max = (valeur_approcher_a) ** puissance + puissance * (valeur_approcher_a)**puissance-1 * incertitude_a
     a_power_n_min = (valeur_approcher_a) ** puissance - puissance * (valeur_approcher_a)**puissance-1 * incertitude_a
     return a_power_n_min, a_power_n_max
-
-
 
 # Demmare le programme
 Main.menu()
