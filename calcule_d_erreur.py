@@ -116,7 +116,7 @@ class Incertitude:
 
   def a_plus_b(valeur_approcher_a, incertitude_a, valeur_approcher_b, incertitude_b):
     somme_a_b_max = valeur_approcher_a + valeur_approcher_b + (incertitude_a + incertitude_b)
-    somme_a_b_min = valeur_approcher_a + valeur_approcher_b - (incertitude_a - incertitude_b)
+    somme_a_b_min = valeur_approcher_a + valeur_approcher_b - (incertitude_a + incertitude_b)
     return somme_a_b_min, somme_a_b_max 
 
   def a_moins_b(valeur_approcher_a, incertitude_a, valeur_approcher_b, incertitude_b):
