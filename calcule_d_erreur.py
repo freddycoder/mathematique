@@ -115,34 +115,31 @@ class Incertitude:
     return erreur_relative
 
   def a_plus_b(valeur_approcher_a, incertitude_a, valeur_approcher_b, incertitude_b):
-    somme_a_b_min = valeur_approcher_a + valeur_approcher_b - (incertitude_a + incertitude_b)
-    somme_a_b_max = valeur_approcher_a + valeur_approcher_b + (incertitude_a + incertitude_b)
-    return somme_a_b_min, somme_a_b_max 
+    delta = valeur_approcher_a + valeur_approcher_b
+    incertitude = incertitude_a + incertitude_b
+    return delta, incertitude
 
   def a_moins_b(valeur_approcher_a, incertitude_a, valeur_approcher_b, incertitude_b):
-    difference_a_b_min = valeur_approcher_a - valeur_approcher_b - incertitude_a - incertitude_b
-    difference_a_b_max = valeur_approcher_a - valeur_approcher_b + incertitude_a + incertitude_b
-    return difference_a_b_min, difference_a_b_max
+    delta = valeur_approcher_a - valeur_approcher_b
+    incertitude = incertitude_a + incertitude_b
+    return delta, incertitude
 
   def constance_a(valeur_approcher, incertitude):
-    ik_min = valeur_approcher - incertitude
-    ik_max = valeur_approcher + incertitude
-    return ik_min, ik_max
+    delta = valeur_approcher
+    return delta, incertitude
 
   def a_fois_b(valeur_approcher_a, incertitude_a, valeur_approcher_b, incertitude_b):
-    ab_min = valeur_approcher_a * valeur_approcher_b - (valeur_approcher_a * incertitude_b + valeur_approcher_b * incertitude_b)
-    ab_max = valeur_approcher_a * valeur_approcher_b + (valeur_approcher_a * incertitude_b + valeur_approcher_b * incertitude_a)
-    return ab_min, ab_max
+    delta = valeur_approcher_a * valeur_approcher_b
+    incertitude = (valeur_approcher_a * incertitude_b) + (valeur_approcher_b * incertitude_a)
+    return delta, incertitude
 
   def a_diviser_par_b(valeur_approcher_a, incertitude_a, valeur_approcher_b, incertitude_b):
-    a_sur_b_min = valeur_approcher_a / valeur_approcher_b - ((valeur_approcher_a * incertitude_b + valeur_approcher_b * incertitude_a) / valeur_approcher_b**2 )
-    a_sur_b_max = valeur_approcher_a / valeur_approcher_b + ((valeur_approcher_a * incertitude_b + valeur_approcher_b * incertitude_a) / valeur_approcher_b**2 )
-    return a_sur_b_min, a_sur_b_max
+    delta = valeur_approcher_a / valeur_approcher_b
+    incertitude = ((valeur_approcher_a * incertitude_b + valeur_approcher_b * incertitude_a) / valeur_approcher_b**2 )
+    return delta, incertitude
 
   def a_power_n(valeur_approcher_a, incertitude_a, puissance):
-    a_power_n_min = (valeur_approcher_a) ** puissance - puissance * (valeur_approcher_a)**puissance-1 * incertitude_a
-    a_power_n_max = (valeur_approcher_a) ** puissance + puissance * (valeur_approcher_a)**puissance-1 * incertitude_a
-    return a_power_n_min, a_power_n_max
+    delta = valeur_approcher_a ** puissance
+    incertitude = puissance * ((valeur_approcher_a)**(puissance-1)) * incertitude_a
+    return delta, incertitude
 
-# Demmare le programme
-Main.menu()
